@@ -6,9 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Level_Design.unity
+    guid: 7ab6014eb476e674eafea8d56e59fb02
+  - enabled: 1
     path: Assets/OutdoorsScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
   - enabled: 1
     path: Assets/Scenes/Main_Menu.unity
     guid: a860a6f4a9d47b847939afa66270fdc4
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Loading_Scene.unity
+    guid: 76f3616ac6065ac45b78305724fd5f70
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8d2d22d69a326814c9be707b5f350475,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5762692a6f191004b886383130719126,
+      type: 2}
