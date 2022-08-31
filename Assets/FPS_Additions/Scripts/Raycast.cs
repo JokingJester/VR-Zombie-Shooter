@@ -6,7 +6,7 @@ public class Raycast : MonoBehaviour
 {
     private Gun_Fire_Pistol _gunFire;
     [SerializeField]
-    private Camera _cam;
+    private Transform _shootPoint;
     private int layerMask = 1 << 8;// used to hide raycast from hitting the player and children
     [SerializeField]
     private GameObject []_bloodSplatter;
@@ -29,8 +29,8 @@ public class Raycast : MonoBehaviour
 
     public void Shoot()
     {
-        Vector3 origin = _cam.transform.position;
-        Vector3 direction = _cam.transform.forward;
+        Vector3 origin = _shootPoint.transform.position;
+        Vector3 direction = _shootPoint.transform.forward;
 
         Ray rayOrigin = new Ray(origin, direction);
         RaycastHit hitInfo;

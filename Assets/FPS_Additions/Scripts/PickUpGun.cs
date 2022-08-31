@@ -13,7 +13,7 @@ public class PickUpGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gunSwap = GameObject.Find("Player").GetComponent<Gun_Swap>();
+        //_gunSwap = GameObject.Find("Player").GetComponent<Gun_Swap>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PickUpGun : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Playero")
         {
             _gunSwap._enableMachineGun = true;
             _gunSwap.EnableMachineGun();
