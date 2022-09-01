@@ -7,7 +7,7 @@ public class Ammo : MonoBehaviour
     public int bullets;
 
     [SerializeField]
-    private Gun_Fire_Pistol _gun1;
+    private Belt _belt;
     [SerializeField]
     private AudioClip _pickupAudio;
     [SerializeField]
@@ -17,7 +17,7 @@ public class Ammo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gun1 = GameObject.Find("USP").GetComponent<Gun_Fire_Pistol>();
+        _belt = GameObject.Find("Clip Visual").GetComponent<Belt>();
     }
 
     // Update is called once per frame
@@ -30,17 +30,9 @@ public class Ammo : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            if (_gun1.totalBullets != _gun1.maxBulletsAvailable)
-            {
-                _gun1 = GameObject.Find("USP").GetComponent<Gun_Fire_Pistol>();
-                
-                _gun1.totalBullets += bullets;
-                _gun1.AddBullets();
-
-                
-                Destroy(this.gameObject, 1.0f);
-                audioSource.PlayOneShot(_pickupAudio);
-            }
+            _belt.AddClip(2);
+            Destroy(this.gameObject, 1.0f);
+            audioSource.PlayOneShot(_pickupAudio);
         }
     }
 }

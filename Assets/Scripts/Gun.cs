@@ -38,6 +38,9 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        if (_gunClip != null && _gunClip.ammoCount == 0)
+            _gunClip.transform.parent = null;
+
         CheckGunSliderThreshold();
     }
 
@@ -112,5 +115,11 @@ public class Gun : MonoBehaviour
                 _playedSlideBackSound = false;
             }
         }
+    }
+
+    public void PlaceGunOnBelt()
+    {
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
     }
 }
